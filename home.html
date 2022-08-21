@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Abalone age predictor</title>
+        <link rel="stylesheet"type="text/css" 
+        href= "{{ url_for('static',filename='style.css') }}"/>
+    </head>
+        <body>
+        <center>
+        <h1> Abalone age prediction </h1>
+
+        <div class="form">
+        <form method="POST", action="{{url_for('predict')}}">
+
+        <b> Length(mm) :  <input type="text", name='length'> <br><br>
+            Diameter(mm) :  <input type="text", name='diameter'> <br><br>
+            Height(mm) :  <input type="text", name='height'> <br><br>
+            Whole_weight(g) : <input type="text", name='whole_weight'> <br><br>
+            Shucked_weight(g):<input type="text", name='shucked_weight'> <br><br>
+            Viscera_weight(g):<input type="text", name='viscera_weight'> <br><br>
+            Shell_weight(g):<input type="text", name='shell_weight'> <br><br>
+            Gender:
+            <select  name="gender" class="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="infant">Infant</option>
+            </select>
+        </b>
+        <br>
+        <br>
+            <input type="submit" , value='predict' class="predict">
+        </form>
+        </div>
+        	<h2> Age of abalone : {{ data }} years</h2>
+        </center>
+
+    </body>
+</html>
